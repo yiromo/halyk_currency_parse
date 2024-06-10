@@ -1,0 +1,36 @@
+version: '3'
+
+services:
+  backend:
+    build: .
+    container_name: currency_backend
+    restart: always
+    ports:
+      - 8100:8000
+    environment:
+      - pars-back
+    networks:
+      - cur-net
+    volumes:
+      - .:/src
+    depends_on:
+      - postgres
+
+  postgres:
+    container_name: postgres-currency
+    image: postgres:13
+    environment:
+      POSTGRES_USER: currency
+      POSTGRES_PASSWORD: 12345
+      POSTGRES_DB: currency_db
+    networks:
+      - cur-net
+    ports:
+      - '5400:5432'
+    restart: unless-stopped
+    volumes:
+      - ./data:/data/db
+
+networks:
+  cur-net:
+    driver: bridge

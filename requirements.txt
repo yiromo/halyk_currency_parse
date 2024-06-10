@@ -1,0 +1,9 @@
+fastapi==0.101.1
+uvicorn==0.28.1
+beautifulsoup4
+requests
+python-dotenv
+fake-useragent
+lxml
+tortoise-orm
+asyncpg
