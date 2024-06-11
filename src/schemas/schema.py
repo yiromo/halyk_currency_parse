@@ -44,7 +44,7 @@ async def data():
         currency_history = currency_data['data']['currencyHistory']
         
         if currency_history:
-            latest_data = currency_history['0']  
+            latest_data = currency_history[0]  
 
             date = latest_data['date']
             date_title = latest_data['dateTitle']

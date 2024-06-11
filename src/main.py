@@ -16,8 +16,8 @@ TORTOISE_ORM = {
         "default": {
             "engine": "tortoise.backends.asyncpg",
             "credentials": {
-                "host": "192.168.0.81",
-                "port": "5400",
+                "host": "172.18.0.2", #find the container, then inspect it, find the ip
+                "port": "5432",
                 "user": "currency",
                 "password": "12345",
                 "database": "currency_db",
